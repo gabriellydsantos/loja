@@ -1,0 +1,211 @@
+:root {
+    --azul: rgba(4, 51, 162, 1);
+    --branco: rgba(242, 242, 242, 1);
+    --ouro: rgb(212, 175, 55);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--fontOswald);
+}
+body {
+    background: var(--branco);
+    margin: 0 auto;
+    width: 100vw;
+    overflow-x: hidden;
+    /*background-image: url('/img/fundo.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;*/
+}
+footer{
+    border: 2px solid rgba(4, 51, 162, 1);
+    /* position: fixed;
+    bottom: 0; */
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:var(--azul);
+}
+header {
+    background:var(--azul);
+}
+.container {
+    width: 100%;
+    height: 150vh;
+    overflow-x: hidden;
+}
+h1 {
+    font-size: 1.2rem;
+    color: var(--branco);
+}
+.link {
+    text-decoration: none;
+    font-size: .8rem;
+    border: 1px solid var(--branco);
+    padding: 10px 25px;
+    border-radius: 2rem;
+    line-height: 4rem;
+}
+.link:hover {
+    background: rgba(242, 242, 242, .5);
+    color: rgba(0, 0, 0, 0.5);
+}
+#sanduiche {
+    display: none;
+}
+.logo {
+    position: absolute;
+    width: 25%;
+    padding: 9px 3%;
+    display: flex;
+    align-items: center;
+}
+.conteudo_central {
+    width:800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.slides {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    overflow-x: hidden;
+    height: 50vh;
+}
+.slides img {
+    width:100%;
+}
+.item {
+    display: flex;
+    justify-content: center;
+    animation: fade 2s ease-in-out;
+    display: none;   
+    object-fit: cover;
+    object-position: center;
+}
+.sobre {
+    position: fixed;
+    width: 100%;
+    margin:10% auto;
+    text-shadow:0px 2px 5px rgba(4, 51, 162, 1);
+    font-size:20px;
+}
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 18px;
+    }
+    ul {        
+        flex-direction: column;
+        width: 100%;
+    }
+    li {
+        z-index: 4;
+        font-size: 20px;
+        width: 100%;
+        height: calc(50vh/4);
+        background: var(--azul);
+        text-align: center;
+        border-bottom: thin solid rgba(242, 242, 242, 0.2);
+        padding: 2rem;
+    }
+    #sanduiche {
+        position: absolute;
+        right: 0;
+        padding: 15px;
+        display:block;
+        background: none;
+        border: none;
+        z-index: 50;
+        cursor: pointer;
+        font-size: 30px;
+    }
+    .menu {
+        display: none;
+    }
+    h1 {
+        font-size: 1rem;
+    }
+    .link {
+        font-size: .7rem;
+        border-radius: 1.5rem;
+    }
+    .logo {
+        position: relative;
+        padding: 15px 4%;
+        width: 100%;
+        font-size: 25px;
+    }
+    .slides {
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: transform 0.5s ease;
+        max-width: 350px;
+    }
+    footer {
+        display: none;
+    }
+    .filtros {
+        flex-direction: column;
+    }
+    .filtros div {
+        width: 100%;
+    }
+    .conteudo_central {
+        padding: 1rem;
+        width: 100%;
+    }
+    .card {
+        width: 100%;
+    }
+    .slides img {
+        max-width: 350px;
+        width:100%;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }   
+    100% {
+        opacity: 1;
+    } 
+}
+.filtros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 1rem auto;
+}
+.produtos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: .7rem;
+}
+.card {
+    width: 250px;
+    border: thin solid var(--ouro);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+.card-header, .card-footer, .card-body {
+    padding: .7rem;
+    background: rgba(255, 255, 255, 0.7);
+}
+.card-header, .card-footer {
+    color: var(--azul);
+}
+.img-card {
+    width: 150px;
+    object-fit: contain;
+}

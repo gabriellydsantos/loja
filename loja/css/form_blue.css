@@ -1,0 +1,141 @@
+:root {
+    --azul: rgba(4, 51, 162, 1);
+    --branco: rgba(242, 242, 242, 1);
+    --ouro: rgb(212, 175, 55);
+}
+* {
+    font-family: var(--fontOswald);
+    color: var(--ouro);
+}
+input, textarea, select {
+    outline: 0;
+    color: var(--azul);
+    width: 100%;
+    text-indent: 5px;
+    font-size: 15px;
+    height: 2rem;
+}
+textarea {
+    height: auto;
+}
+label {
+    color: var(--azul);
+    display: block;
+    text-align: left;
+}
+
+form button {
+    color: var(--branco);
+    width: 100%;
+    cursor: pointer;
+    border: thin solid rgba(212,175, 55, 1);
+    background: var(--azul);
+    height: 2rem;
+}
+#pagina_cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:1em;    
+}
+.conteudo {
+    background:rgba(242, 242, 242, .5);
+    border: 1px solid var(--azul);
+    backdrop-filter: blur(2px);
+    width:30em;
+    text-align: center;
+    margin:0 2rem;
+}
+.cadastro {
+    padding:5%;
+}
+h1 {
+    text-align: center;
+    margin: 0;
+    margin-top:2%;
+    line-height: 20px;
+    font-size: 30px;
+    text-shadow:0px 2px 5px rgba(4, 51, 162, 1);
+}
+
+dialog {
+    margin:15% auto;
+    border: 1px solid rgb(212, 175, 55);
+    background:var(--branco);
+    width: 250px;
+    padding: 2%;
+    z-index: 55;
+    animation: fadeScale 1s;
+}
+dialog div {
+    margin:2% auto;
+    padding-top: 5%;
+    text-align: center;
+    height: 20vh;
+    color: rgb(212, 175, 55);
+}
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+dialog button {
+    margin:0 auto;
+    width:100%;
+    background:rgb(212, 175, 55);
+}
+table {
+    width: 100%;
+    padding: 0;
+}
+td, th {
+    padding:0;
+    color: var(--azul);
+}
+tr {
+    background-color: rgba(4, 51, 162, 0.3);
+}
+tr:nth-child(even), th {
+    background: rgba(255, 255, 255, 0.7);  
+}
+td a {
+    color: var(--azul);
+    text-decoration: none;
+}
+td a:hover {
+    color: var(--ouro);
+}
+@media only screen and (max-width: 767px) {
+    #pagina_cadastro {
+        width: 100%;
+        margin: 5px;
+    }
+    .conteudo {
+        margin: 1em;
+        width: 100%;
+    }
+}
+#mais {
+    box-shadow: 2px 1px 2px var(--azul);
+    width: 100%;
+    text-align: center;
+    background: var(--azul);
+    color: var(--branco);
+    text-decoration: none;
+    border: thin solid var(--ouro);
+}
+.alert-success {
+    color: rgb(29, 73, 2);
+    background-color: rgba(143, 233, 87, 0.5);
+}
+.alert-danger {
+    color: rgb(77, 13, 5);
+    background-color: rgba(233, 135, 122, 0.5);
+}
