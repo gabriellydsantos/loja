@@ -19,3 +19,16 @@ try {
     exit();
 }
 ?>
+
+
+CREATE DATABASE IF NOT EXISTS sua_base_de_dados;
+
+USE sua_base_de_dados;
+
+CREATE TABLE IF NOT EXISTS produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    preco DECIMAL(10,2) NOT NULL
+);
+
