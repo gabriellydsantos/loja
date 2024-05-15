@@ -1,7 +1,7 @@
-create DATABASE loja;
+create DATABASE con;
 
-drop database loja;
-USE loja;
+drop database con;
+USE con;
 
 
 CREATE TABLE `categoria` (
@@ -195,12 +195,15 @@ ALTER TABLE `endereco`
   ADD CONSTRAINT `endereco_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
+drop table produtos;
+
 CREATE TABLE produtos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    descricao TEXT,
-    preco DECIMAL(10, 2) NOT NULL,
-    estoque INT NOT NULL
+    id_produto INT AUTO_INCREMENT PRIMARY KEY,
+    nome_produto VARCHAR(255) NOT NULL,
+    descricao_produto TEXT,
+    valor DECIMAL(10, 2),
+    id_cat INT,
+    FOREIGN KEY (id_cat) REFERENCES categoria(id_cat)
 );
 
 COMMIT;
