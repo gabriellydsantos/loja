@@ -49,7 +49,7 @@ include_once "conexao.php";
 //página de cadastro receberá os dados do formulário
 //Verifica se o formulário foi enviado 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $erro = "";//cria variável erro
+    $erro = "";//scria variável erro
     //se foi enviado o formulário recebe os dados do post
     $nome = $_POST['nome'];//recebe o valor do campo nome
     $email = $_POST['email'];//recebe o valor do campo email
