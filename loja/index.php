@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="css/estilo_blue.css">
     <link rel="stylesheet" href="css/form_blue.css">
 </head>
-
+ 
 <body>
-
-<?php
-include_once "menu.php";
-?>
+    <?php
+    include_once "menu.php";
+    include_once "conexao.php";
+    ?>
     <main>
         <div class="container">
             <!-- DIALOG -->
@@ -60,34 +60,30 @@ include_once "menu.php";
                 <div class="produtos">
                     <div class="card">
                         <div class="card-header">
-
+ 
                         </div>
                         <div class="card-body">
                            
                         </div>
                         <div class="card-footer">
-                            
+                           
                         </div>
                         <div id="btnComprar">
-                            
+                           
                         </div>
                     </div>
                 </div>
             </div><!-- fecha conteudo-central -->
         </div><!-- fecha container -->
     </main><!-- fecha main -->
-    
-   
+    <?php
+    include_once "footer.php";
+    ?>
     <script src="js/carrossel.js"></script>
     <script>
         const dialog = document.getElementById('avisos');
         setTimeout(() => dialog.open = false, 2000);
     </script>
-
-
-<?php
-include_once "footer.php";
-?>
 </body>
-
+ 
 </html>
