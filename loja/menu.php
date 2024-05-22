@@ -15,9 +15,9 @@
       $id_logado = $_SESSION['id_usuario'] ?? 0;
       if ($id_logado == 1) {
       ?>
-      <li class="item_menu"><a href="cadastro_categoria.php">Categorias</a></li>
-      <li class="item_menu"><a href="cadastro_produtos.php">Produtos</a></li>
-      <li class="item_menu"><a href="cadastrar_usuario.php">Usuários</a></li>
+        <li class="item_menu"><a href="cadastro_categoria.php">Categorias</a></li>
+        <li class="item_menu"><a href="cadastro_produtos.php">Produtos</a></li>
+        <li class="item_menu"><a href="cadastrar_usuario.php">Usuários</a></li>
       <?php
       }
       ?>
