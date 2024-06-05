@@ -1,7 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
- 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,7 @@
     <link rel="stylesheet" href="css/estilo_blue.css">
     <link rel="stylesheet" href="css/form_blue.css">
 </head>
- 
+
 <body>
     <?php
     include_once "menu.php";
@@ -58,20 +57,36 @@
                     </div>
                 </form>
                 <div class="produtos">
-                    <div class="card">
+                   <?php
+            $sql = "SELECT * FROM produto p JOIN categoria c ON p.id_cat = c.id_cat;";
+            $select = $conexao->prepare($sql); 
+            $select->execute();
+            
+            while($rs = $select->fetch(PDO::FETCH_ASSOC)) {
+                $id_produto = $rs['id_produto'];
+                $nome = $rs['nome_produto'];
+                $descricao = $rs['descricao_produto'];
+                $valor = $rs['valor'];
+
+                echo '<div class="card">
                         <div class="card-header">
- 
+                            <img src="img/a54.jpeg" alt="' . $nome . '" width="150">
+                            ' . $nome . '
                         </div>
                         <div class="card-body">
-                           
+                            ' . $descricao . '
                         </div>
                         <div class="card-footer">
-                           
+                            ' . $valor . '
                         </div>
                         <div id="btnComprar">
-                           
+                            <button>Comprar</button>
                         </div>
-                    </div>
+                    </div>';
+            }
+        ?>
+
+
                 </div>
             </div><!-- fecha conteudo-central -->
         </div><!-- fecha container -->
@@ -85,5 +100,4 @@
         setTimeout(() => dialog.open = false, 2000);
     </script>
 </body>
- 
 </html>

@@ -206,4 +206,8 @@ CREATE TABLE produtos (
     FOREIGN KEY (id_cat) REFERENCES categoria(id_cat)
 );
 
+SELECT * FROM produto p JOIN categoria c ON p.id_cat = c.id_cat;
+
+
+
 COMMIT;
